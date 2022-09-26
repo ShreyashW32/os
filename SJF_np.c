@@ -75,12 +75,18 @@ int main()
                     swap(&a[i].BT, &a[j].BT);
                 }
             }
+            if(Cmp_time<a[i].AT) a[i].WT=0;
+            else
             a[i].WT =Cmp_time-a[i].AT;
+            
             Total_WT +=a[i].WT;
             Cmp_time = Cmp_time + a[i].BT;
             // completion time of the process
             // Turn Around Time of the process
             // compl-Arival
+            if(a[i].WT==0)
+            a[i].TAT=a[i].BT;
+            else
             a[i].TAT = Cmp_time - a[i].AT;
             Total_TAT = Total_TAT + a[i].TAT;
             
